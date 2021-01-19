@@ -1,0 +1,9 @@
+<div class="card">
+
+  <LibraryContainer::Header @name={{@library.name}} @length={{@library.books.length}}/>
+
+  <LibraryContainer::Info @info={{@library}}/>
+
+  <LibraryContainer::Footer @library={{@library}} @destroyRecord={{this.deleteLibrary}}/>  
+  
+</div>

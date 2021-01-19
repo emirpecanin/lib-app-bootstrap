@@ -1,0 +1,31 @@
+{{#if this.isEmpty}}
+  <div class="mt-4">
+    <Table @header={{array "Item" "Price" "Author" "Amount" "Total" }} >
+      {{#each this.cartContents as |shopItem|}}
+        <tr>
+          <td> {{shopItem.name}} </td>
+          
+          <td> ${{shopItem.price}} </td>
+          
+          <td> {{shopItem.authorName}} </td>
+          
+          <td> {{shopItem.amount}} </td>
+          
+          <td> $ &nbsp; {{shopItem.totalPrice}} </td>
+        </tr> 
+      {{/each}}
+    </Table>
+    
+    <UserInfoForm 
+      @firstName={{this.firstName}}
+      @lastName={{this.lastName}}
+      @email={{this.email}}
+      @street={{this.street}}
+      @town={{this.town}}
+      @isDisabled={{this.isDisabled}}
+      @orderItems={{this.orderItems}}
+    />
+  </div>
+{{else}}
+  <Alert @color="danger">Please add books in the cart first</Alert>
+{{/if}}

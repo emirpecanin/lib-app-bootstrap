@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark"> 
+  <div class="container">
+    {{!-- Brand --}}
+    <div class="d-flex align-items-center">
+      <div class="navbar-brand">
+        <MainNavigation::Link 
+          @route={{'index'}}>
+            <FaIcon @icon="glasses" @prefix="fas" @size="2x" class="text-info"/>      
+        </MainNavigation::Link>
+      </div>
+
+      {{!-- Main navigation --}}
+      <div class="navbar-nav">
+        {{#each this.navLinks as |link|}}
+          <MainNavigation::NavLink
+            @route={{link.linkRoute}}>
+            {{link.linkName}}
+          </MainNavigation::NavLink>
+        {{/each}}
+      </div>
+    </div>
+
+    
+    {{!-- Admin dropdown --}}
+    <div class="navbar-link">
+      <MainNavigation::DropdownLink @links={{this.dropDownLinks}}/>
+    </div>
+  </div>
+</nav>
+
+

@@ -1,0 +1,92 @@
+{{yield}}
+<Form 
+  @title="Thank you for your purchase"
+  @subtitle="Please fill in your information to continue">
+
+  <label 
+    for="firstname" 
+    class="form-group w-100">
+    Firstname
+    <Input 
+      @value={{@firstName}}
+      @id="firstname" 
+      type="text" 
+      name="firstname" 
+      placeholder="John" 
+      autocomplete="given-name" 
+      class="form-control" 
+      required 
+    />
+  </label>
+
+  <label 
+    for="lastname" 
+    class="form-group w-100">
+    Lastname
+    <Input 
+      @value={{@lastName}}
+      @id="lastname" 
+      type="text" 
+      name="lastname" 
+      placeholder="Doe" 
+      autocomplete="family-name" 
+      class="form-control" 
+      required 
+    />
+  </label>
+  <label 
+    for="email" 
+    class="form-group w-100">
+    E-mail
+    <Input 
+      @value={{@email}}
+      @id="email" 
+      type="email" 
+      name="email" 
+      placeholder="john.doe@company.com" 
+      autocomplete="email" 
+      class="form-control" 
+      required 
+    />
+  </label>
+
+  <label 
+    for="street" 
+    class="form-group w-100">
+    Street
+    <Input 
+      @value={{@street}}
+      @id="street" 
+      type="text" 
+      name="street" 
+      placeholder="Your street goes here" 
+      autocomplete="email" 
+      class="form-control" 
+      required 
+    />
+  </label>
+
+  <label 
+    for="town" 
+    class="form-group w-100">
+    Town
+    <Input 
+      @value={{@town}}
+      @id="town" 
+      type="text" 
+      name="town" 
+      placeholder="Your town goes here" 
+      autocomplete="email" 
+      class="form-control" 
+      required 
+    />
+  </label>
+  
+  <button 
+    disabled={{@isDisabled}}
+    {{on 'click' (fn @orderItems)}}
+    type="submit" 
+    class="btn btn-info w-100">
+    Order
+  </button>    
+</Form>

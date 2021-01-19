@@ -1,0 +1,41 @@
+<Form @title="Add new library">
+  <Input 
+    @value={{this.name}}
+    type="text" 
+    placeholder="Library name" 
+    class="form-control mb-2" 
+  />
+
+  <Input 
+    @value={{this.address}}
+    type="text" 
+    placeholder="Library adress" 
+    class="form-control mb-2" 
+  />
+
+  <Input 
+    @value={{this.phoneNumber}}
+    type="text" 
+    placeholder="Telephone number" 
+    class="form-control mb-2" 
+  />
+
+  <Textarea 
+    @value={{this.additionalInfo}}
+    cols="10" 
+    rows="3" 
+    placeholder="Additional info (optional)" 
+    class="form-control mb-2"
+  />
+
+  <button 
+    disabled={{this.isDisabled}}
+    {{on 'click' this.addLibrary}}
+    type="button" 
+    class="w-100 btn btn-info">
+    Add new Library
+  </button>
+</Form>
+
+    
+  

@@ -1,0 +1,38 @@
+<Form @title="Edit library information">
+  <Input 
+    @value={{@model.name}}
+    type="text" 
+    placeholder="Library name" 
+    class="form-control mb-2" 
+  />
+
+  <Input 
+    @value={{@model.address}}
+    type="text" 
+    placeholder="Library adress" 
+    class="form-control mb-2" 
+  />
+
+  <Input 
+    @value={{@model.phoneNumber}}
+    type="text" 
+    placeholder="Telephone number" 
+    class="form-control mb-2" 
+  />
+
+  <Textarea 
+    @value={{@model.additional}}
+    cols="10" 
+    rows="3" 
+    placeholder="Additional info (optional)" 
+    class="form-control mb-2"
+    />
+
+  <button 
+    {{on 'click' this.saveChanges}}
+    type="button" 
+    class="btn btn-info w-100"
+  >
+    Save changes
+  </button>
+</Form>

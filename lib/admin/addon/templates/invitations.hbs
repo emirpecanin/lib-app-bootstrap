@@ -1,0 +1,24 @@
+{{#if @model}}
+  <Table @header={{array 'ID' 'Email' ' '}} >
+    {{#each @model as |invitation|}}
+      <tr>
+        <td class="align-middle text-muted">
+          {{invitation.id}}
+        </td>
+        <td class="align-middle font-weight-bold">
+          {{invitation.email}}
+        </td>
+        <td class="align-middle">
+          <button
+            type="button"
+            class="btn btn-danger"
+            {{on 'click' (fn this.removeInvitation invitation)}} >
+            Remove
+          </button>
+        </td>
+      </tr>
+    {{/each}}
+  </Table>
+{{else}}
+  <Alert @color="danger">No records in database</Alert>
+{{/if}}

@@ -1,0 +1,9 @@
+{{#if @model}}
+  <div class="container card-columns mt-4">
+    {{#each @model as |library|}} 
+      <LibraryContainer @library={{library}} />
+    {{/each}}
+  </div>
+{{else}}
+  <Alert @color="danger">No libraries in database</Alert>
+{{/if}}

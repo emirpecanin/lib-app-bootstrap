@@ -1,0 +1,11 @@
+{
+  "name": "shared-components",
+  "keywords": [
+    "ember-addon"
+  ],  
+  "dependencies": {
+    "ember-cli-htmlbars": "*",
+    "ember-cli-babel": "*",
+    "ember-bootstrap": "^4.6.0"
+  }
+}

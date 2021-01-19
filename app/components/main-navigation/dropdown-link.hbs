@@ -1,0 +1,16 @@
+<div class="dropdown inline-block relative z-1">
+  <BsDropdown as |dd|>
+    <dd.button>{{@links.dropdownName}}</dd.button>
+    <dd.menu as |ddm|>
+      {{#each @links.links as |link|}}
+        <ddm.item>
+          <LinkTo 
+            @route={{link.linkRoute}}
+            class="nav-link" >
+            {{link.linkName}}
+          </LinkTo>
+        </ddm.item>
+      {{/each}}
+    </dd.menu>
+  </BsDropdown>
+</div>

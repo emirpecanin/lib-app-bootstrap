@@ -1,0 +1,33 @@
+
+<div class="flex justify-center" >
+  <Form 
+    @title="New author?"
+    @subtitle="Add a new author" >
+    <Input 
+      @value={{this.authorName}}
+      type="text" 
+      placeholder="Authors name" 
+      class="form-control mb-2" 
+    />
+    <button 
+      disabled={{this.isNameValid}}
+      {{on 'click' this.saveAuthor}}
+      type="button" 
+      class="btn btn-info w-100" >
+      Add new author
+    </button>
+  </Form>
+
+  <BookForm 
+    @getSelection={{this.getSelection}}
+    @canAddBook={{this.canAddBook}}
+    @libraryRes={{this.library}}
+    @authorRes={{this.authors}}
+    @bookName={{this.bookName}}
+    @bookIsdn={{this.bookIsdn}}
+    @bookPrice={{this.bookPrice}}
+    @bookAmount={{this.bookAmount}}
+    @canSaveBook={{this.canSaveBook}}
+    @saveBook={{this.saveBook}} 
+  />  
+</div>

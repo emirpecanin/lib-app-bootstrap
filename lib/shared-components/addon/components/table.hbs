@@ -1,0 +1,14 @@
+<div class="mt-4">
+  <table class="table">
+    <thead>
+      <tr>
+        {{#each @header as |headerTitle|}}
+          <th>{{headerTitle}}</th>
+        {{/each}}
+      </tr>
+    </thead>
+    <tbody>
+      {{yield}}      
+    </tbody>
+  </table>
+</div>

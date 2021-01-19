@@ -1,0 +1,12 @@
+{{#if @model}}
+  <Table @header={{array "User detail" "Purchase detail" }}>
+    {{#each @model as |invoice|}}
+      <tr>
+          <td>{{{formatter invoice.userInfo}}}</td>
+          <td>{{{formatter invoice.items}}}</td>
+      </tr>
+    {{/each}}
+  </Table>
+{{else}}
+  <Alert @color="danger">No records in database</Alert>
+{{/if}}

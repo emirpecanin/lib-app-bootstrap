@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Library finder</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+<meta name="emb-lib-finder/config/environment" content="%7B%22modulePrefix%22%3A%22emb-lib-finder%22%2C%22environment%22%3A%22development%22%2C%22rootURL%22%3A%22%2F%22%2C%22locationType%22%3A%22auto%22%2C%22EmberENV%22%3A%7B%22FEATURES%22%3A%7B%7D%2C%22EXTEND_PROTOTYPES%22%3A%7B%22Date%22%3Afalse%7D%2C%22_APPLICATION_TEMPLATE_WRAPPER%22%3Afalse%2C%22_DEFAULT_ASYNC_OBSERVERS%22%3Atrue%2C%22_JQUERY_INTEGRATION%22%3Afalse%2C%22_TEMPLATE_ONLY_GLIMMER_COMPONENTS%22%3Atrue%7D%2C%22APP%22%3A%7B%22name%22%3A%22emb-lib-finder%22%2C%22version%22%3A%220.0.0%2Bd969b439%22%7D%2C%22firebase%22%3A%7B%22apiKey%22%3A%22AIzaSyDo5zUuxkOoghdggYfN0gUeLgjXwspV7GI%22%2C%22authDomain%22%3A%22libraryfinder-f16fd.firebaseapp.com%22%2C%22databaseURL%22%3A%22https%3A%2F%2Flibraryfinder-f16fd-default-rtdb.europe-west1.firebasedatabase.app%2F%22%2C%22projectId%22%3A%22libraryfinder-f16fd%22%2C%22storageBucket%22%3A%22libraryfinder-f16fd.appspot.com%22%2C%22messagingSenderId%22%3A%22792441439008%22%2C%22appId%22%3A%221%3A792441439008%3Aweb%3Ac2d60b0f889bc9b291cd45%22%2C%22measurementId%22%3A%22G-WQ73RQX9MB%22%7D%2C%22contentSecurityPolicy%22%3A%7B%22script-src%22%3A%22'self'%20'unsafe-eval'%20apis.google.com%22%2C%22frame-src%22%3A%22'self'%20https%3A%2F%2F*.firebaseapp.com%22%2C%22connect-src%22%3A%22'self'%20wss%3A%2F%2F*.firebaseio.com%20https%3A%2F%2F*.googleapis.com%22%7D%2C%22exportApplicationGlobal%22%3Atrue%7D" />
+<meta name="admin/config/environment" content="%7B%22modulePrefix%22%3A%22admin%22%2C%22environment%22%3A%22development%22%7D" />
+<meta name="authors/config/environment" content="%7B%22modulePrefix%22%3A%22authors%22%2C%22environment%22%3A%22development%22%7D" />
+<meta name="books/config/environment" content="%7B%22modulePrefix%22%3A%22books%22%2C%22environment%22%3A%22development%22%7D" />
+<meta name="libraries/config/environment" content="%7B%22modulePrefix%22%3A%22libraries%22%2C%22environment%22%3A%22development%22%7D" />
+<meta name="shop/config/environment" content="%7B%22modulePrefix%22%3A%22shop%22%2C%22environment%22%3A%22development%22%7D" />
+
+    <link integrity="" rel="stylesheet" href="/assets/vendor.css">
+    <link integrity="" rel="stylesheet" href="/assets/emb-lib-finder.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap" rel="stylesheet">  
+    <meta name="emb-lib-finder/config/asset-manifest" content="%7B%22bundles%22%3A%7B%22admin%22%3A%7B%22assets%22%3A%5B%5D%7D%2C%22authors%22%3A%7B%22assets%22%3A%5B%7B%22uri%22%3A%22/engines-dist/authors/assets/engine-vendor.js%22%2C%22type%22%3A%22js%22%7D%2C%7B%22uri%22%3A%22/engines-dist/authors/assets/engine.js%22%2C%22type%22%3A%22js%22%7D%5D%7D%2C%22books%22%3A%7B%22assets%22%3A%5B%5D%7D%2C%22libraries%22%3A%7B%22assets%22%3A%5B%5D%7D%2C%22shop%22%3A%7B%22assets%22%3A%5B%5D%7D%7D%7D" />
+  </head>
+  <body>
+    
+
+    <script src="/assets/vendor.js"></script>
+    <script src="/assets/emb-lib-finder.js"></script>
+    
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyDo5zUuxkOoghdggYfN0gUeLgjXwspV7GI",
+        authDomain: "libraryfinder-f16fd.firebaseapp.com",
+        databaseURL: "https://libraryfinder-f16fd-default-rtdb.europe-west1.firebasedatabase.app",
+        projectId: "libraryfinder-f16fd",
+        storageBucket: "libraryfinder-f16fd.appspot.com",
+        messagingSenderId: "792441439008",
+        appId: "1:792441439008:web:c2d60b0f889bc9b291cd45",
+        measurementId: "G-WQ73RQX9MB"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+
+    <div id="ember-bootstrap-wormhole"></div>
+  </body>
+</html>

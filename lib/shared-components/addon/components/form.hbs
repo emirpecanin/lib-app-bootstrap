@@ -1,0 +1,12 @@
+<div class="w-100 d-flex justify-content-center mt-4">
+    <BsForm class="border p-4 w-50" as |form|>  
+      <div class="form-group">
+        <h3 class="display-5 ">{{@title}}</h3>
+        {{#if @subtitle.length}}
+          <div class="text-muted">{{@subtitle}}</div>
+        {{/if}}
+      </div>
+
+      {{yield}}
+    </BsForm>
+</div>

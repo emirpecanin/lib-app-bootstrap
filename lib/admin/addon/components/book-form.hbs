@@ -1,0 +1,80 @@
+<div class="w-100 d-flex justify-content-center mt-4">
+  <div class="w-50 border p-4">
+    <BsForm {{on 'change' (fn @getSelection)}} as |form|>  
+      <h3 class="display-5">Add new book</h3>
+
+      {{#if @canAddBook}}
+        <select name="library" class="form-control mb-2"> 
+          <option disabled selected default>Select Library</option>
+          {{#each @libraryRes as |library|}}
+            <option value={{library.id}}>{{library.name}}</option>
+          {{/each}}
+        </select>
+
+        <select name="author" class="form-control mb-2" > 
+          <option disabled selected default>Select Author</option>
+          {{#each @authorRes as |author|}}
+            <option value={{author.id}}>{{author.name}}</option>
+          {{/each}}
+        </select>
+
+        <label 
+          class="form-group w-100 mb-2"
+          for="book-value">
+          Name of the book
+          <Input 
+            @value={{@bookName}}
+            type="text" 
+            class="form-control" 
+          />
+        </label>
+
+        <label 
+          class="form-group w-100 mb-2"
+          for="book-value">
+          ISDN number of the book
+          <Input 
+            @value={{@bookIsdn}}
+            type="text" 
+            class="form-control" 
+          />
+        </label>
+
+        <label 
+          class="form-group w-100 mb-2"
+          for="book-value">
+          Price of the book:
+          <Input 
+            @value={{@bookPrice}}
+            @id="book-value"
+            type="number" 
+            class="form-control" 
+          />
+        </label>   
+        
+        <label 
+          class="form-group w-100 mb-2"
+          for="book-amount">
+          How many books to add:
+          <Input 
+            @value={{@bookAmount}}
+            @id="book-amount"
+            type="number" 
+            class="form-control mb-2" 
+          />
+        </label>
+
+        <button 
+          disabled={{@canSaveBook}}
+          {{on 'click' (fn @saveBook)}}
+          type="button" 
+          class="btn btn-info w-100" >
+          Add new book
+        </button> 
+      {{else}}
+        <Alert @color="red">Please add at least one library and at least one author</Alert>
+      {{/if}}
+
+    </BsForm>
+  </div>
+</div>

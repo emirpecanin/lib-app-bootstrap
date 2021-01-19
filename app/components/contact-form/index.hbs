@@ -1,0 +1,31 @@
+<Form 
+  @title="Let us call you!"
+  @subtitle="Send us a message. We will try to answer as soon as possible">
+  <Input 
+    @value={{this.email}}
+    type="email" 
+    placeholder="Your Email" 
+    class="form-control mb-2" 
+  />
+
+  <Textarea 
+    @value={{this.message}}
+    cols="10" 
+    rows="3" 
+    placeholder="Message needs to be 5 letters or more" 
+    class="form-control mb-4"
+    />
+
+  <button 
+    {{on 'click' this.sendMessage}}
+    disabled={{this.isDisabled}}
+    type="button" 
+    class="btn btn-info w-100"
+  >
+    Submit
+  </button>
+
+  {{#if this.alertMessage}}
+    <Alert @color="success">{{this.alertMessage}}</Alert>
+  {{/if}}
+</Form>

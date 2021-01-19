@@ -1,0 +1,35 @@
+<div class="jumbotron jumbotron-fluid bg-light text-info mt-4 d-flex flex-column align-items-center">
+  <div class="text-center border-bottom border-info w-75">
+    <div class="w-auto display-4">
+      <FaIcon 
+        @icon="glasses" 
+        @prefix="fas" />
+      Library finder app
+    </div>
+    <div class="">Powered by 
+      <em class="book-font">Ember</em> & <em class="book-font">Ember-bootstrap</em></div>
+    <div class=""> Get your registration number by inputting your email below.</div>
+  </div>
+  
+  <div class="mt-4  w-50">
+    <BsForm class="d-flex flex-column align-items-center" as |form|>  
+      <Input 
+        @id="email_address" 
+        @value={{this.email}}
+        name="email_address" 
+        type="text" 
+        autocomplete="email" 
+        placeholder="Please input your email adress"
+        class="form-control mb-2"/>
+
+      <form.submitButton 
+        disabled={{this.isDisabled}}
+        class="{{if this.isDisabled 'disabled'}} btn-info w-25"
+        {{on 'click' this.submitInvitation}}
+        >Submit</form.submitButton>
+    </BsForm>
+    {{#if this.alertMessage}}
+      <Alert @color="success">{{this.alertMessage}}</Alert>
+    {{/if}}
+  </div>
+</div>

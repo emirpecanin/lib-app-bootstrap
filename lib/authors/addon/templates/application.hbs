@@ -1,0 +1,50 @@
+{{#if @model.length}}
+  <div class="mt-4">
+    <Table @header={{array "Author's name (click on name to edit)" "Delete author" }} >
+      {{#each @model as |author|}}
+        <tr>
+          {{#if author.isEditing}}
+            <td class="flex justify-center " >
+              <form class="input-group">
+                <Input
+                  class="form-control"
+                  @value={{author.name}}
+                />
+                <div class="input-group-append">
+                  <button
+                    class="btn btn-outline-success"
+                    type="button"
+                    {{on 'click' (fn this.saveChanges author) }} >
+                    Accept
+                  </button>
+                  <button
+                    class="btn btn-outline-danger"
+                    type="button"
+                    {{on 'click' (fn this.rejectChanges author) }} > 
+                    Cancel
+                  </button>
+                </div>
+              </form>
+            </td>
+          {{else}}
+            <td class="align-middle"> 
+              <span {{on 'click' (fn this.toggleEditing author)}}>{{author.name}}</span> 
+            </td>
+          {{/if}}
+          
+          <td>
+            <button
+              type="button"
+              class="btn btn-danger"
+              {{on 'click' (fn this.removeAuthor author)}} >
+              Remove
+            </button>
+          </td>
+          
+        </tr>
+      {{/each}}
+    </Table>
+  </div>
+{{else}}
+  <Alert @color="danger"> No authors in database </Alert>
+{{/if}}

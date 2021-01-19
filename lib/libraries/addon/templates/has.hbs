@@ -1,0 +1,8 @@
+<Table @header={{array "Title" "ISDN"}}>
+  {{#each @model.books as |book|}}
+    <tr>
+      <td>{{book.name}}</td>
+      <td>{{book.ISDN}}</td>
+    </tr>
+  {{/each}}
+</Table>

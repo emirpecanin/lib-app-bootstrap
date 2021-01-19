@@ -1,0 +1,25 @@
+<div class="card-footer">
+    {{#if @library.books.length}}
+      <LinkTo 
+        @route="has"
+        @model={{@library}}
+        class="btn btn-warning text-black"
+        type="button">
+        <FaIcon @icon='book' @prefix='fas' />
+      </LinkTo>
+    {{/if}}
+
+    <LinkTo 
+      @route="edit" 
+      @model={{@library}}
+      class="btn btn-info"
+      type="button">
+      <FaIcon @icon='tools' @prefix='fas' />
+    </LinkTo>
+
+    <button class="btn btn-danger float-right"
+      {{on 'click' (fn @destroyRecord @library)}}
+      type="button">
+      <FaIcon @icon="trash" @prefix="fas" />
+    </button>
+  </div>

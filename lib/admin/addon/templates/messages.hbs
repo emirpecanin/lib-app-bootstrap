@@ -1,0 +1,22 @@
+{{#if @model.length}}
+  <div class="my-8">
+    <Table @header={{array "ID" "Email" "Time Stamp" "Message" }}>
+      {{#each @model as |message|}}
+        <tr>
+          <td class="align-middle text-muted"> {{message.id}} </td>
+          <td class="align-middle"> {{message.email}} </td>
+          <td class="align-middle">  {{message.dateSent}} </td>
+          <td class="align-middle font-weight-bold"> {{message.message}} </td>
+        </tr>
+      {{/each}}
+    </Table>
+    <button 
+      {{on 'click' this.purgeMessages}}
+      type="button" 
+      class="btn btn-danger">
+      Purge messages
+    </button>
+  </div>
+{{else}}
+  <Alert @color="danger">No records in database</Alert>
+{{/if}}

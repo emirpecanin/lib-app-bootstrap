@@ -1,0 +1,35 @@
+<Input 
+class="form-control p-4 mt-4"
+type="text" 
+@value={{this.bookName}}
+placeholder="Type in name to find your book" />
+
+{{#if this.books}}
+  <div class="mt-4">
+    <Table @header={{array "Book" "Author" "Available at" "Amout available" "Add to cart"}}>
+      {{#each this.books as |book|}}
+        <tr>
+          <td class="align-middle"> {{book.name}} </td>
+          
+          <td class="align-middle"> {{book.author.name}} </td>
+          
+          <td class="align-middle"> {{book.library.name}} </td>
+          
+          <td class="align-middle"> {{book.amount}} </td>
+          
+          <td>
+            <button 
+              disabled={{book.notAvailable}}
+              {{on 'click' (fn this.buyBook book)}}
+              class="btn btn-warning"
+              type="button">
+              Add
+            </button>
+          </td>
+        </tr>
+      {{/each}}
+    </Table>
+  </div>
+{{else}}
+  <Alert @color="danger">No books in database</Alert>
+{{/if}}
